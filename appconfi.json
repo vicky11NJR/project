@@ -1,0 +1,17 @@
+{
+  "source_buckets": [
+    "s3://vigneshwaran-rawzone-batch01/vickytestdemo/active.parquet",
+    "s3://vigneshwaran-rawzone-batch01/vickytestdemo/viewers.parquet"
+  ],
+  "destination_bucket": "s3://vigneshwaran-stagingzone-01",
+  "transformations": {
+    "advertising_id": "sha2",
+    "user_id": "sha2",
+    "user_longitude": "convert to decimal with 7 precision",
+    "user_latitude": "convert to decimal with 7 precision",
+    "location_source": "Convert to a comma-separated string",
+    "user_lat":"convert to decimal with 7 precision",
+    "user_long":"convert to decimal with 7 precision"
+  },
+  "partition_columns": ["month", "date"]
+}
